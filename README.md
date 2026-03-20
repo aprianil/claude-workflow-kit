@@ -13,6 +13,7 @@ into any project.
 memory/
   feedback_context_engineering.md   — Context window management principles
   feedback_plan_and_compound.md     — Plan-before-work + compound-after-shipping rules
+  project_parallel_agents.md        — Parallel agents with git worktrees and scoped briefs
 ```
 
 ## How to Use
@@ -33,5 +34,5 @@ memory/
 
 ## Sources
 
-- Compound Engineering: https://every.to/guides/compound-engineering
-- Context Engineering / "No Vibes Allowed": Dex Horthy, AI Engineer 2025
+- [Compound Engineering](https://every.to/guides/compound-engineering) — Plan → Work → Review → Compound loop, 50/50 rule
+- [No Vibes Allowed: Solving Hard Problems in Complex Codebases](https://www.youtube.com/watch?v=rmvDxxNubIg) — Dex Horthy, context engineering, Research → Plan → Implement
