@@ -144,3 +144,8 @@ this 50% actually happens — don't skip it.
 | Work | Implement in fresh context with plan loaded | — |
 | Review | Self-review: hardest decision, alternatives, confidence | Trivial change |
 | Compound | What went wrong, what pattern emerged, what context for later | Nothing learned |
+
+## Reference Files
+
+- [parallel-agents.md](parallel-agents.md) — Parallel agents with git worktrees
+- [improve-codebase-architecture.md](improve-codebase-architecture.md) — Module deepening, architectural friction, dependency categories, testing strategy

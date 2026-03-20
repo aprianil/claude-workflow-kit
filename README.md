@@ -16,8 +16,9 @@ after shipping.
 ## Or Copy Manually
 
 ```
-SKILL.md                 — Skill entry point (all principles in one file)
-parallel-agents.md       — Parallel agents with git worktrees
+SKILL.md                           — Skill entry point (all principles in one file)
+parallel-agents.md                 — Parallel agents with git worktrees
+improve-codebase-architecture.md   — Module deepening and architectural refactoring
 
 .claude/
   CLAUDE.md              — Local rules for your .claude/ directory
@@ -59,3 +60,4 @@ encoded is one less correction next time.
 
 - [Compound Engineering](https://every.to/guides/compound-engineering) — Plan → Work → Review → Compound loop, 50/50 rule
 - [No Vibes Allowed: Solving Hard Problems in Complex Codebases](https://www.youtube.com/watch?v=rmvDxxNubIg) — Dex Horthy, context engineering, Research → Plan → Implement
+- [Improve Codebase Architecture](https://github.com/mattpocock/skills/tree/main/improve-codebase-architecture) — Matt Pocock, module deepening, deep modules, dependency categories
