@@ -46,14 +46,25 @@ conversation window. Optimize for:
 
 ### The "Dumb Zone" (~40% Context Window)
 
-Around 40% of the context window, quality starts degrading. Too much history,
-too many tool results, too much exploration — all work happens in this degraded zone.
+Don't use a fixed percentage as a hard cutoff. Instead, continuously self-monitor
+for degradation signals. The zone typically starts between 40-60% of context, but
+varies by task complexity and how much noise is in the window.
 
-**How to recognize it:** Agent goes in circles. Outputs get generic or repetitive.
-Forgets earlier instructions. Suggests things already tried.
+**Self-check after every few tool calls:**
+- Am I repeating an approach that already failed?
+- Am I producing longer, vaguer outputs than 10 messages ago?
+- Did I forget a correction or instruction the user gave earlier?
+- Am I exploring files I already read without remembering what was in them?
 
-**The fix:** Compact what you know into a brief. Start a fresh session. Load just
-the plan. Don't retry in a bloated context.
+**If any are true → suggest compaction.** Don't wait for the user to notice. Say:
+"I'm noticing my context is getting heavy — want me to compact into a brief and
+start fresh?"
+
+**If none are true, keep going.** 60% with clean, focused context beats 30% full
+of noise. The signal-to-noise ratio matters more than the percentage.
+
+**The fix isn't "try harder."** Compact what you know into a brief. Start a fresh
+session. Load just the plan.
 
 ### Don't Research and Build in the Same Session
 

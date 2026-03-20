@@ -15,13 +15,22 @@ Every turn of the loop, the model picks its next action based solely on what's i
 - **Size** — Compact. Less noise, more signal. Don't dump raw file contents when a summary with file:line references would do.
 - **Trajectory** — The *pattern* of the conversation steers future output. A conversation full of "agent messes up → human corrects → agent messes up again" trains the model's most likely next move to be... messing up again. A conversation starting with a clean plan produces clean execution.
 
-## The "Dumb Zone" (~40% Context Window)
+## The Dumb Zone (Self-Monitoring)
 
-Around 40% of the context window, quality starts degrading. If you've loaded too much history, too many tool results, or too much exploration, all the actual work happens in this degraded zone.
+Don't use a fixed percentage as a hard cutoff. Instead, continuously self-monitor for degradation signals. The zone typically starts between 40-60% of context, but varies by task complexity and how much noise is in the window.
 
-**How to recognize it:** The agent starts going in circles. Outputs get generic or repetitive. It forgets earlier instructions or contradicts itself. It suggests things that were already tried and failed.
+**Self-check after every few tool calls. Ask yourself:**
+- Am I repeating an approach that already failed?
+- Am I producing longer, vaguer outputs than I was 10 messages ago?
+- Did I forget a correction or instruction the user gave earlier?
+- Am I exploring files I already read without remembering what was in them?
+- Is my confidence in my output dropping?
 
-**The fix isn't "try harder."** It's compact and start fresh. Write down what you know (the plan/brief), open a new session, load just the plan.
+**If any of these are true → suggest compaction.** Don't wait for the user to notice. Say: "I'm noticing my context is getting heavy — want me to compact what I know into a brief and we start fresh?"
+
+**If none are true, keep going.** 60% with clean, focused context is better than 30% full of noise. The signal-to-noise ratio matters more than the percentage.
+
+**The fix isn't "try harder."** It's compact and start fresh. Write down what you know (the plan/brief), suggest a new session, load just the plan.
 
 ## Context Compaction
 
