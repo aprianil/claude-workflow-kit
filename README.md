@@ -35,5 +35,3 @@ memory/
 
 - Compound Engineering: https://every.to/guides/compound-engineering
 - Context Engineering / "No Vibes Allowed": Dex Horthy, AI Engineer 2025
-- Emil Kowalski's design engineering philosophy
-- "Make Interfaces Feel Better" by Jakub Krehel
